@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - GreenGrow Sarawak</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="marketplace.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="assets/logo.png" alt="Logo"></a>
+        </div>
+        <nav class="nav-container" style="display: flex; justify-content: center;">
+            <ul class="nav-links" style="display: flex; gap: 2rem; justify-content: center; align-items: center;">
+                <!-- <li><a href="index.html">Home</a></li> -->
+                <li><a href="marketplace.html" class="active">Marketplace</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-auth">
+            <a href="accountregister.html">Register</a>
+            <span class="divider">|</span>
+            <a href="accountlogin.html">Login</a>
+        </div>
+    </header>
+
+    <!-- Marketplace Main Content -->
+    <main class="marketplace-container">
+        <!-- Search and Filter Bar -->
+        <div class="search-filter-bar">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" placeholder="Search for products...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="filter-container">
+                <div class="filter-options">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Seeds</button>
+                    <button class="filter-btn">Fertilizers</button>
+                    <button class="filter-btn">Tools</button>
+                    <button class="filter-btn">Organic</button>
+                    <button class="filter-btn">Pesticides</button>
+                    <button class="filter-btn">Irrigation</button>
+                </div>
+                <div class="sort-options">
+                    <select>
+                        <option value="popular">Most Popular</option>
+                        <option value="newest">Newest First</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-container">
+            <div class="products-grid">
+                <!-- Seeds Category -->
+                <div class="product-card" data-category="seeds">
+                    <div class="product-image">
+                        <img src="assets/products/rice-seeds.jpg" alt="Rice Seeds">
+                        <div class="product-discount">-20%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Premium Rice Seeds (5kg)</h3>
+                        <div class="product-price">
+                            <span class="current-price">RM 25.00</span>
+                            <span class="original-price">RM 30.00</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-count">(128)</span>
+                        </div>
+                        <div class="product-sold">Sold: 500+</div>
+                        <div class="product-location">Kuching, Sarawak</div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="seeds">
+                    <div class="product-image">
+                        <img src="assets/products/vegetable-seeds.jpg" alt="Vegetable Seeds">
+                        <div class="product-discount">-15%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Mixed Vegetable Seeds Pack</h3>
+                        <div class="product-price">
+                            <span class="current-price">RM 18.00</span>
+                            <span class="original-price">RM 22.00</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="rating-count">(95)</span>
+                        </div>
+                        <div class="product-sold">Sold: 300+</div>
+                        <div class="product-location">Miri, Sarawak</div>
+                    </div>
+                </div>
+
+                <!-- Fertilizers Category -->
+                <div class="product-card" data-category="fertilizers">
+                    <div class="product-image">
+                        <img src="assets/products/organic-fertilizer.jpg" alt="Organic Fertilizer">
+                        <div class="product-discount">-15%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Organic Fertilizer 5kg</h3>
+                        <div class="product-price">
+                            <span class="current-price">RM 45.00</span>
+                            <span class="original-price">RM 50.00</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="rating-count">(89)</span>
+                        </div>
+                        <div class="product-sold">Sold: 300+</div>
+                        <div class="product-location">Miri, Sarawak</div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="fertilizers">
+                    <div class="product-image">
+                        <img src="assets/products/npk-fertilizer.jpg" alt="NPK Fertilizer">
+                        <div class="product-discount">-10%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">NPK Fertilizer 10kg</h3>
+                        <div class="product-price">
+                            <span class="current-price">RM 65.00</span>
+                            <span class="original-price">RM 75.00</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-count">(156)</span>
+                        </div>
+                        <div class="product-sold">Sold: 450+</div>
+                        <div class="product-location">Sibu, Sarawak</div>
+                    </div>
+                </div>
+
+                <!-- Tools Category -->
+                <div class="product-card" data-category="tools">
+                    <div class="product-image">
+                        <img src="assets/products/garden-shovel.jpg" alt="Garden Shovel">
+                        <div class="product-discount">-10%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Stainless Steel Garden Shovel</h3>
+                        <div class="product-price">
+                            <span class="current-price">RM 35.00</span>
+                            <span class="original-price">RM 40.00</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-count">(256)</span>
+                        </div>
+                        <div class="product-sold">Sold: 800+</div>
+                        <div class="product-location">Sibu, Sarawak</div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="tools">
+                    <div class="product-image">
+                        <img src="assets/products/pruning-shears.jpg" alt="Pruning Shears">
+                        <div class="product-discount">-15%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Professional Pruning Shears</h3>
+                        <div class="product-price">
+                            <span class="current-price">RM 45.00</span>
+                            <span class="original-price">RM 55.00</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-count">(178)</span>
+                        </div>
+                        <div class="product-sold">Sold: 600+</div>
+                        <div class="product-location">Kuching, Sarawak</div>
+                    </div>
+                </div>
+
+                <!-- Organic Products Category -->
+                <div class="product-card" data-category="organic">
+                    <div class="product-image">
+                        <img src="assets/products/compost.jpg" alt="Compost">
+                        <div class="product-discount">-20%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Organic Compost 10kg</h3>
+                        <div class="product-price">
+                            <span class="current-price">RM 28.00</span>
+                            <span class="original-price">RM 35.00</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-count">(312)</span>
+                        </div>
+                        <div class="product-sold">Sold: 1000+</div>
+                        <div class="product-location">Kuching, Sarawak</div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="organic">
+                    <div class="product-image">
+                        <img src="assets/products/vermicompost.jpg" alt="Vermicompost">
+                        <div class="product-discount">-15%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Vermicompost 5kg</h3>
+                        <div class="product-price">
+                            <span class="current-price">RM 35.00</span>
+                            <span class="original-price">RM 42.00</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-count">(245)</span>
+                        </div>
+                        <div class="product-sold">Sold: 750+</div>
+                        <div class="product-location">Bintulu, Sarawak</div>
+                    </div>
+                </div>
+
+                <!-- Pesticides Category -->
+                <div class="product-card" data-category="pesticides">
+                    <div class="product-image">
+                        <img src="assets/products/organic-pesticide.jpg" alt="Organic Pesticide">
+                        <div class="product-discount">-10%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Organic Pest Control 1L</h3>
+                        <div class="product-price">
+                            <span class="current-price">RM 38.00</span>
+                            <span class="original-price">RM 45.00</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="rating-count">(167)</span>
+                        </div>
+                        <div class="product-sold">Sold: 450+</div>
+                        <div class="product-location">Miri, Sarawak</div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="pesticides">
+                    <div class="product-image">
+                        <img src="assets/products/fungicide.jpg" alt="Fungicide">
+                        <div class="product-discount">-15%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Fungicide Spray 500ml</h3>
+                        <div class="product-price">
+                            <span class="current-price">RM 42.00</span>
+                            <span class="original-price">RM 50.00</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-count">(198)</span>
+                        </div>
+                        <div class="product-sold">Sold: 550+</div>
+                        <div class="product-location">Kuching, Sarawak</div>
+                    </div>
+                </div>
+
+                <!-- Irrigation Category -->
+                <div class="product-card" data-category="irrigation">
+                    <div class="product-image">
+                        <img src="assets/products/drip-irrigation.jpg" alt="Drip Irrigation">
+                        <div class="product-discount">-25%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Drip Irrigation Kit</h3>
+                        <div class="product-price">
+                            <span class="current-price">RM 85.00</span>
+                            <span class="original-price">RM 110.00</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-count">(143)</span>
+                        </div>
+                        <div class="product-sold">Sold: 250+</div>
+                        <div class="product-location">Bintulu, Sarawak</div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="irrigation">
+                    <div class="product-image">
+                        <img src="assets/products/sprinkler.jpg" alt="Sprinkler">
+                        <div class="product-discount">-20%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Automatic Sprinkler System</h3>
+                        <div class="product-price">
+                            <span class="current-price">RM 120.00</span>
+                            <span class="original-price">RM 150.00</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-count">(112)</span>
+                        </div>
+                        <div class="product-sold">Sold: 180+</div>
+                        <div class="product-location">Sibu, Sarawak</div>
+                    </div>
+                </div>
+
+                <!-- Equipment Category -->
+                <div class="product-card" data-category="equipment">
+                    <div class="product-image">
+                        <img src="assets/products/sprayer.jpg" alt="Sprayer">
+                        <div class="product-discount">-15%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Electric Sprayer 16L</h3>
+                        <div class="product-price">
+                            <span class="current-price">RM 120.00</span>
+                            <span class="original-price">RM 150.00</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-count">(75)</span>
+                        </div>
+                        <div class="product-sold">Sold: 200+</div>
+                        <div class="product-location">Bintulu, Sarawak</div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="equipment">
+                    <div class="product-image">
+                        <img src="assets/products/soil-tester.jpg" alt="Soil Tester">
+                        <div class="product-discount">-10%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Digital Soil Tester</h3>
+                        <div class="product-price">
+                            <span class="current-price">RM 65.00</span>
+                            <span class="original-price">RM 75.00</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-count">(89)</span>
+                        </div>
+                        <div class="product-sold">Sold: 150+</div>
+                        <div class="product-location">Kuching, Sarawak</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn">5</button>
+            <button class="page-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GreenGrow Sarawak</h3>
+                <p>Empowering farmers with technology and sustainable solutions.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <!-- <li><a href="index.html">Home</a></li> -->
+                    <li><a href="marketplace.html">Marketplace</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Kuching, Sarawak</p>
+                <p><i class="fas fa-phone"></i> +60 12-345 6789</p>
+                <p><i class="fas fa-envelope"></i> info@greengrow.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GreenGrow Sarawak. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
