@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Rice (Padi)",
+    "scientific": "Oryza sativa",
+    "category": "crops",
+    "season": "early-wet",
+    "regions": "Kuching, Samarahan, Sri Aman",
+    "soil": "Clay loam, well-drained",
+    "water": "High",
+    "image": "assets/plants/rice.jpg",
+    "description": "Rice is a staple food crop grown in flooded fields, especially during the wet season. It requires high water and is a key crop in Sarawak's agriculture."
+  },
+  {
+    "name": "Black Pepper",
+    "scientific": "Piper nigrum",
+    "category": "crops",
+    "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
+    "regions": "Kuching, Serian, Samarahan",
+    "soil": "Rich, well-drained",
+    "water": "Moderate",
+    "image": "assets/plants/pepper.jpg",
+    "description": "Black pepper is a climbing vine cultivated for its spicy fruit. Sarawak is famous for its high-quality black pepper, which grows well year-round."
+  },
+  {
+    "name": "Durian",
+    "scientific": "Durio zibethinus",
+    "category": "fruits",
+    "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
+    "regions": "Kuching, Serian, Sri Aman",
+    "soil": "Deep, fertile, well-drained",
+    "water": "High",
+    "image": "assets/plants/durian.jpg",
+    "description": "Durian is known as the 'king of fruits' in Southeast Asia. It produces large, spiky fruits with a strong aroma and creamy texture, typically harvested in the late dry to early wet season."
+  },
+  {
+    "name": "Pineapple",
+    "scientific": "Ananas comosus",
+    "category": "fruits",
+    "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
+    "regions": "Kuching, Samarahan, Serian",
+    "soil": "Sandy loam, acidic",
+    "water": "Moderate",
+    "image": "assets/plants/pineapple.jpg",
+    "description": "Pineapple is a tropical fruit with sweet, juicy flesh. It thrives in well-drained, acidic soils and can be grown throughout the year in Sarawak."
+  },
+  {
+    "name": "Kangkung (Water Spinach)",
+    "scientific": "Ipomoea aquatica",
+    "category": "vegetables",
+    "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
+    "regions": "Kuching, Samarahan, Sri Aman",
+    "soil": "Rich, moist",
+    "water": "High",
+    "image": "assets/plants/kangkung.jpg",
+    "description": "Kangkung, or water spinach, is a fast-growing leafy vegetable popular in Malaysian cuisine. It grows best in moist, nutrient-rich soils."
+  },
+  {
+    "name": "Bendi (Okra)",
+    "scientific": "Abelmoschus esculentus",
+    "category": "vegetables",
+    "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
+    "regions": "Kuching, Serian, Samarahan",
+    "soil": "Well-drained, fertile",
+    "water": "Moderate",
+    "image": "assets/plants/bendi.jpg",
+    "description": "Bendi, or okra, is a warm-season vegetable valued for its edible green pods. It is easy to grow and commonly used in stir-fries and curries."
+  },
+  {
+    "name": "Lemongrass",
+    "scientific": "Cymbopogon citratus",
+    "category": "herbs",
+    "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
+    "regions": "Kuching, Samarahan, Serian",
+    "soil": "Well-drained, sandy",
+    "water": "Moderate",
+    "image": "assets/plants/lemongrass.jpg",
+    "description": "Lemongrass is a fragrant herb used in cooking and traditional medicine. It grows well in tropical climates and is a staple in many Malaysian dishes."
+  },
+  {
+    "name": "Curry Leaf",
+    "scientific": "Murraya koenigii",
+    "category": "herbs",
+    "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
+    "regions": "Kuching, Serian, Sri Aman",
+    "soil": "Well-drained, fertile",
+    "water": "Moderate",
+    "image": "assets/plants/curry-leaf.jpg",
+    "description": "Curry leaf is an aromatic herb essential in South Asian cooking. The leaves are used fresh for their distinctive flavor and aroma."
+  },
+  {
+    "name": "Orchid",
+    "scientific": "Orchidaceae",
+    "category": "ornamental",
+    "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
+    "regions": "Kuching, Samarahan, Serian",
+    "soil": "Well-drained, bark mix",
+    "water": "Moderate",
+    "image": "assets/plants/orchid.jpg",
+    "description": "Orchids are prized ornamental plants known for their beautiful and diverse flowers. They are popular in gardens and as houseplants in Sarawak."
+  },
+  {
+    "name": "Bougainvillea",
+    "scientific": "Bougainvillea spectabilis",
+    "category": "ornamental",
+    "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
+    "regions": "Kuching, Serian, Sri Aman",
+    "soil": "Well-drained, sandy",
+    "water": "Low",
+    "image": "assets/plants/bougainvillea.jpg",
+    "description": "Bougainvillea is a vibrant ornamental plant with colorful bracts. It is drought-tolerant and commonly used for landscaping and decorative purposes."
+  }
+] 
