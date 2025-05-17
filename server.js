@@ -217,5 +217,3 @@ app.get('/met-alerts', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch MET Malaysia RSS' });
   }
 });
-
-app.listen(3001, () => console.log('Proxy running on port 3001'));
