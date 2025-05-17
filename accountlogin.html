@@ -133,8 +133,12 @@
                                     window.location.href = 'index.html';
                                 }, 2000);
                             } else {
-                                showMessage('Login succeeded but failed to fetch user info.', 'error');
+                                showMessage(userData.message || 'User not found after login. Please register first.', 'error');
+                                // Optionally clear any partial login state here
                             }
+                        })
+                        .catch(() => {
+                            showMessage('An error occurred while fetching user info.', 'error');
                         });
                 } else {
                     showMessage(data.message, 'error');
