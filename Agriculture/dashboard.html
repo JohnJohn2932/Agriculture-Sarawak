@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - GreenGrow Sarawak</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="assets/logo.png" alt="Logo"></a>
+        </div>
+        <nav class="nav-container" style="display: flex; justify-content: center;">
+            <ul class="nav-links" style="display: flex; gap: 2rem; justify-content: center; align-items: center;">
+                <!-- <li><a href="index.html">Home</a></li> -->
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="plant.html">Plant</a></li>
+                <!-- <li><a href="dashboard.html" class="active">Dashboard</a></li> -->
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-auth">
+            <a href="accountregister.html">Register</a>
+            <span class="divider">|</span>
+            <a href="accountlogin.html">Login</a>
+        </div>
+    </header>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar" id="dashboardSidebar">
+            <button id="sidebarToggle" aria-label="Toggle Sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="user-profile">
+                <img src="assets/default-avatar.png" alt="User Avatar" class="profile-image">
+                <div class="profile-info">
+                    <h3>John Doe</h3>
+                    <p>Farmer</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-home"></i> Overview</a></li>
+                    <li><a href="#"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <div class="section-header">
+                <h2>Dashboard Overview</h2>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Crops</h3>
+                        <div class="stat-number">1,234</div>
+                        <div class="stat-change positive">+12% from last month</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Revenue</h3>
+                        <div class="stat-number">RM 45,678</div>
+                        <div class="stat-change positive">+8% from last month</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Orders</h3>
+                        <div class="stat-number">89</div>
+                        <div class="stat-change negative">-3% from last month</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity Card -->
+            <div class="activity-card">
+                <h3>Recent Activities</h3>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="activity-details">
+                            <p>New order received from Sarah Lee</p>
+                            <div class="activity-time">2 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="activity-details">
+                            <p>New crop added: Organic Tomatoes</p>
+                            <div class="activity-time">5 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="activity-details">
+                            <p>Monthly report generated</p>
+                            <div class="activity-time">1 day ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upgrade Card -->
+            <div class="upgrade-card">
+                <div class="upgrade-content">
+                    <h3>Upgrade to Premium</h3>
+                    <p>Get access to advanced features and analytics</p>
+                    <ul class="upgrade-benefits">
+                        <li><i class="fas fa-check"></i> Advanced analytics dashboard</li>
+                        <li><i class="fas fa-check"></i> Priority customer support</li>
+                        <li><i class="fas fa-check"></i> Custom reports</li>
+                        <li><i class="fas fa-check"></i> Unlimited data storage</li>
+                    </ul>
+                    <a href="#" class="upgrade-btn">Upgrade Now</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GreenGrow Sarawak</h3>
+                <p>Empowering farmers with technology and sustainable solutions.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="marketplace.html">Marketplace</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Kuching, Sarawak</p>
+                <p><i class="fas fa-phone"></i> +60 12-345 6789</p>
+                <p><i class="fas fa-envelope"></i> info@greengrow.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GreenGrow Sarawak. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Profile Dropdown -->
+    <div class="profile-dropdown" id="profileDropdown" style="display: none; position: absolute; top: 110%; right: 0; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border-radius: 8px; min-width: 140px; z-index: 999;">
+        <a href="account.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">My Account</a>
+        <a href="dashboard.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">Dashboard</a>
+        <a href="#" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">Setting</a>
+        <a href="#" id="logout-link" class="dropdown-item" style="display: block; padding: 10px 16px; color: #c00; text-decoration: none;">Log Out</a>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

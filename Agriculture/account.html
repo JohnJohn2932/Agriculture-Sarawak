@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - GreenGrow Sarawak</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="accountregister.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="assets/logo.png" alt="Logo"></a>
+        </div>
+        <nav class="nav-container">
+            <ul class="nav-links">
+                <!-- <li><a href="index.html">Home</a></li> -->
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="plant.html">Plant</a></li>
+                <!-- <li><a href="dashboard.html">Dashboard</a></li> -->
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-auth">
+            <!-- Profile Dropdown -->
+            <div class="profile-dropdown" id="profileDropdown" style="display: none; position: absolute; top: 110%; right: 0; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border-radius: 8px; min-width: 140px; z-index: 999;">
+                <a href="account.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">My Account</a>
+                <a href="dashboard.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">Dashboard</a>
+                <a href="#" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">Setting</a>
+                <a href="#" id="logout-link" class="dropdown-item" style="display: block; padding: 10px 16px; color: #c00; text-decoration: none;">Log Out</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="account-section" style="padding: 4rem 0; background: var(--light-gray); min-height: 80vh;">
+            <div class="section-header">
+                <h2>My Account</h2>
+                <p>Edit your profile, change your password, or delete your account.</p>
+            </div>
+            <div class="account-container" style="max-width: 600px; margin: 0 auto;">
+                <div class="account-profile-box">
+                    <div class="profile-avatar-container">
+                        <img src="assets/default-avatar.png" alt="Profile Picture" class="profile-avatar" id="profileAvatar">
+                        <label for="avatarUpload" class="avatar-upload-label">
+                            <span class="plus-icon">+</span>
+                            <input type="file" id="avatarUpload" accept="image/*" style="display:none;">
+                        </label>
+                    </div>
+                    <div class="profile-info-fields">
+                        <div class="profile-info-row">
+                            <span class="profile-label">Username:</span>
+                            <span class="profile-value" id="profileUsername">User Name</span>
+                            <button type="button" class="profile-change-btn" data-field="username">Change</button>
+                        </div>
+                        <div class="profile-info-row">
+                            <span class="profile-label">Email:</span>
+                            <span class="profile-value" id="profileEmail">user@email.com</span>
+                            <button type="button" class="profile-change-btn" data-field="email">Change</button>
+                        </div>
+                        <div class="profile-info-row">
+                            <span class="profile-label">Phone:</span>
+                            <span class="profile-value" id="profilePhone">0123456789</span>
+                            <button type="button" class="profile-change-btn" data-field="phone">Change</button>
+                        </div>
+                        <div class="profile-info-row">
+                            <span class="profile-label">Address:</span>
+                            <span class="profile-value" id="profileAddress">User Address</span>
+                            <button type="button" class="profile-change-btn" data-field="address">Change</button>
+                        </div>
+                        <div class="profile-info-row">
+                            <span class="profile-label">Password:</span>
+                            <span class="profile-value" id="profilePassword">********</span>
+                            <button type="button" class="profile-change-btn" data-field="password">Change</button>
+                        </div>
+                        <div class="profile-info-row">
+                            <span class="profile-label">City:</span>
+                            <span class="profile-value" id="profileCity">User City</span>
+                            <button type="button" class="profile-change-btn" data-field="city">Change</button>
+                        </div>
+                        <div class="profile-info-row">
+                            <span class="profile-label">State:</span>
+                            <span class="profile-value" id="profileState">User State</span>
+                            <button type="button" class="profile-change-btn" data-field="state">Change</button>
+                        </div>
+                        <div class="profile-info-row">
+                            <span class="profile-label">Postcode:</span>
+                            <span class="profile-value" id="profilePostcode">User Postcode</span>
+                            <button type="button" class="profile-change-btn" data-field="postcode">Change</button>
+                        </div>
+                    </div>
+                </div>
+                <button id="saveProfileBtn" class="profile-save-btn" style="margin-top:1.5rem; width:100%;">Save Changes</button>
+                <button id="logoutBtn" class="profile-logout-btn" style="margin-top:1rem; width:100%; background-color: #dc3545; color: white; border: none; padding: 0.8rem; border-radius: 25px; cursor: pointer;">Log Out</button>
+                <hr style="margin: 2em 0;">
+                <!-- Removed change password form and delete account button as per user request -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GreenGrow Sarawak</h3>
+                <p>Empowering farmers with technology and sustainable solutions.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GreenGrow Sarawak. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // TODO: Add JS to load user info, handle form submissions, and delete account
+        
+        // Logout functionality
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            // Clear any stored user data
+            localStorage.removeItem('user');
+            sessionStorage.removeItem('user');
+            
+            // Redirect to homepage
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html> 

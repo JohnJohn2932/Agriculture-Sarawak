@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGrow Sarawak</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="assets/logo.png" alt="Logo"></a>
+        </div>
+        <nav class="nav-container" style="display: flex; justify-content: center;">
+            <ul class="nav-links" style="display: flex; gap: 2rem; justify-content: center; align-items: center;">
+                <!-- <li><a href="index.html" class="active">Home</a></li> -->
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="plant.html">Plant</a></li>
+                <!-- <li><a href="dashboard.html">Dashboard</a></li> -->
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-auth">
+            <a href="accountregister.html">Register</a>
+            <span class="divider">|</span>
+            <a href="accountlogin.html">Login</a>
+        </div>
+    </header>
+
+    <!-- Notice Board -->
+    <section class="notice-board">
+        <p id="noticeBoard">🌱 Loading latest updates...</p>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>GreenGrow Sarawak</h1>
+                <p class="hero-subtitle">Your Smart Agriculture Companion</p>
+                <p class="hero-description">Empowering farmers with smart technology and sustainable solutions for a greener future.</p>
+                <div class="hero-buttons">
+                    <a href="marketplace.html" class="btn primary-btn">Explore Marketplace</a>
+                    <a href="contact.html" class="btn secondary-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Active Farmers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Products</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Support</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Navigation -->
+    <section class="category-nav">
+        <div class="categories">
+            <a href="marketplace.html" class="category-item">
+                <i class="fas fa-seedling"></i>
+                <span>Seeds</span>
+            </a>
+            <a href="marketplace.html" class="category-item">
+                <i class="fas fa-flask"></i>
+                <span>Fertilizers</span>
+            </a>
+            <a href="marketplace.html" class="category-item">
+                <i class="fas fa-tools"></i>
+                <span>Tools</span>
+            </a>
+            <a href="marketplace.html" class="category-item">
+                <i class="fas fa-leaf"></i>
+                <span>Organic Products</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Services -->
+    <section class="features">
+        <div class="section-header">
+            <h2>🌿 Our Features</h2>
+            <p>Discover how GreenGrow can help you succeed</p>
+        </div>
+        <div class="features-container">
+            <div class="feature-box">
+                <div class="feature-icon">
+                    <i class="fas fa-store"></i>
+                </div>
+                <h3>Marketplace</h3>
+                <p>Buy & sell farm products with ease. Connect with local farmers and suppliers.</p>
+                <a href="marketplace.html" class="feature-link">Shop Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">
+                    <i class="fas fa-cloud-sun"></i>
+                </div>
+                <h3>Live Weather</h3>
+                <p>Real-time weather forecasts and alerts to help you plan your farming activities.</p>
+                <a href="weather.html" class="feature-link">Check Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Smart Analytics</h3>
+                <p>Track your farm's performance with detailed analytics and insights.</p>
+                <a href="dashboard.html" class="feature-link">View Dashboard <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Plant Information</h3>
+                <p>Explore detailed information about crops, vegetables, herbs, and ornamental plants suitable for Sarawak.</p>
+                <a href="plant.html" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header">
+            <h2>What Our Farmers Say</h2>
+            <p>Success stories from our community</p>
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"GreenGrow has transformed how I manage my farm. The marketplace is a game-changer!"</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="assets/farmer1.jpg" alt="Farmer">
+                    <div class="author-info">
+                        <h4>John Doe</h4>
+                        <p>Rice Farmer, Kuching</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"The weather alerts have saved my crops multiple times. Highly recommended!"</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="assets/farmer2.jpg" alt="Farmer">
+                    <div class="author-info">
+                        <h4>Sarah Lee</h4>
+                        <p>Vegetable Farmer, Miri</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest farming tips and updates</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn primary-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GreenGrow Sarawak</h3>
+                <p>Empowering farmers with technology and sustainable solutions.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="marketplace.html">Marketplace</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Kuching, Sarawak</p>
+                <p><i class="fas fa-phone"></i> +60 12-345 6789</p>
+                <p><i class="fas fa-envelope"></i> info@greengrow.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GreenGrow Sarawak. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Profile Dropdown -->
+    <div class="profile-dropdown" id="profileDropdown" style="display: none; position: absolute; top: 110%; right: 0; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border-radius: 8px; min-width: 140px; z-index: 999;">
+        <a href="account.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">My Account</a>
+        <a href="dashboard.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">Dashboard</a>
+        <a href="#" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">Setting</a>
+        <a href="#" id="logout-link" class="dropdown-item" style="display: block; padding: 10px 16px; color: #c00; text-decoration: none;">Log Out</a>
+    </div>
+</body>
+</html>
