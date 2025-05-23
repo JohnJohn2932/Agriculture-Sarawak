@@ -2,6 +2,70 @@
 
 const weatherApiKey = '2bcd4395f36d772d65499f93916e087a';
 
+// At the top of the script, store allPlants globally
+window.allPlants = [];
+
+// Place this at the top-level scope, outside any function
+function getLangField(field) {
+    const lang = localStorage.getItem('language') || 'en';
+    if (typeof field === 'object' && field !== null) {
+        return field[lang] || field['en'] || Object.values(field)[0];
+    }
+    return field;
+}
+
+// Translation functionality
+async function loadTranslations() {
+    const lang = localStorage.getItem('language') || 'en';
+    try {
+        const response = await fetch(`/${lang}.json`);
+        const translations = await response.json();
+        return translations;
+    } catch (error) {
+        console.error('Error loading translations:', error);
+        return {};
+    }
+}
+
+// Global translation function for use throughout the app
+function t(key, vars = {}) {
+    if (!window.translations) return key;
+    let str = window.translations[key] || key;
+    // Replace {var} in string with values from vars
+    Object.keys(vars).forEach(k => {
+        str = str.replace(new RegExp(`{${k}}`, 'g'), vars[k]);
+    });
+    return str;
+}
+
+async function updatePageTranslations() {
+    const translations = await loadTranslations();
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[key]) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.placeholder = translations[key];
+            } else {
+                element.textContent = translations[key];
+            }
+        }
+    });
+}
+
+// Language selector functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const languageSelect = document.getElementById('language');
+    if (languageSelect) {
+        languageSelect.value = localStorage.getItem('language') || 'en';
+        languageSelect.addEventListener('change', async function() {
+            localStorage.setItem('language', this.value);
+            await updatePageTranslations();
+        });
+    }
+    // Initial translation load
+    updatePageTranslations();
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     console.log("GreenGrow Sarawak Loaded Successfully!");
 
@@ -82,7 +146,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // On page load, call the correct fetchWeather for default city
     if (document.querySelector(".weather-container")) {
-        fetchWeather("Kuching");
+        (async () => {
+            if (!window.translations || Object.keys(window.translations).length === 0) {
+                window.translations = await loadTranslations();
+            }
+            fetchWeather("Kuching");
+        })();
     }
 
     // 📢 Notice Board Updates
@@ -167,10 +236,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 <img src="${user.profilePic || '/assets/default-avatar.png'}" alt="Profile" class="profile-pic" id="profilePicBtn">
                 <span class="user-name" id="profileNameBtn">${user.fullName}</span>
                 <div class="profile-dropdown" id="profileDropdown" style="display: none; position: absolute; top: 110%; right: 0; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border-radius: 8px; min-width: 140px; z-index: 999;">
-                    <a href="account.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">My Account</a>
-                    <a href="dashboard.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">Dashboard</a>
-                    <a href="#" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">Setting</a>
-                    <a href="#" id="logout-link" class="dropdown-item" style="display: block; padding: 10px 16px; color: #c00; text-decoration: none;">Log Out</a>
+                    <a href="account.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;" data-i18n="dropdown_my_account">My Account</a>
+                    <a href="settings.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;" data-i18n="dropdown_settings">Setting</a>
+                    <a href="#" class="dropdown-item" id="dropdownLogoutBtn" style="display: block; padding: 10px 16px; color: #333; text-decoration: none;" data-i18n="dropdown_logout">Logout</a>
                 </div>
             </div>
         `;
@@ -190,13 +258,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 profileDropdown.style.display = 'none';
             }
         });
-        // Logout logic
-        const logoutLink = document.getElementById('logout-link');
-        if (logoutLink) {
-            logoutLink.onclick = function(e) {
+        // Logout logic for dropdown
+        const dropdownLogoutBtn = document.getElementById('dropdownLogoutBtn');
+        if (dropdownLogoutBtn) {
+            dropdownLogoutBtn.onclick = function(e) {
                 e.preventDefault();
                 localStorage.removeItem('user');
-                location.reload();
+                sessionStorage.removeItem('user');
+                window.location.href = 'index.html';
             };
         }
     }
@@ -451,13 +520,12 @@ document.addEventListener("DOMContentLoaded", function () {
             if (hourlyList && data.hourly && data.hourly.time) {
                 hourlyList.innerHTML = '';
                 const now = new Date();
-                // Find the current hour index
                 let currentHourIdx = data.hourly.time.findIndex(t => new Date(t).getHours() === now.getHours());
                 if (currentHourIdx === -1) currentHourIdx = 0;
                 for (let i = 0; i < 5; i++) {
                     const idx = currentHourIdx + i;
                     if (idx >= data.hourly.time.length) break;
-                    const hour = i === 0 ? 'Now' : new Date(data.hourly.time[idx]).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                    const hour = i === 0 ? t('now') : new Date(data.hourly.time[idx]).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
                     const temp = `${Math.round(data.hourly.temperature_2m[idx])}°C`;
                     const iconClass = getWeatherIconFromCode(data.hourly.weathercode[idx]);
                     hourlyList.innerHTML += `
@@ -475,7 +543,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 dailyList.innerHTML = '';
                 for (let i = 0; i < 7; i++) {
                     if (i >= data.daily.time.length) break;
-                    const day = i === 0 ? 'Today' : new Date(data.daily.time[i]).toLocaleDateString('en-US', { weekday: 'short' });
+                    let day;
+                    if (i === 0) {
+                        day = t('today');
+                    } else {
+                        // Get weekday short name (Sun, Mon, ...)
+                        const jsDay = new Date(data.daily.time[i]).getDay();
+                        const shortNames = ['sun','mon','tue','wed','thu','fri','sat'];
+                        day = t('day_' + shortNames[jsDay] + '_short');
+                    }
                     const max = `${Math.round(data.daily.temperature_2m_max[i])}°C`;
                     const min = `${Math.round(data.daily.temperature_2m_min[i])}°C`;
                     const iconClass = getWeatherIconFromCode(data.daily.weathercode[i]);
@@ -491,54 +567,48 @@ document.addEventListener("DOMContentLoaded", function () {
                     `;
                 }
             }
-            // Weather Alerts (dynamic, based on hourly forecast, no spam for continuous blocks)
+            // Weather Alerts
             const alertList = document.querySelector('.alert-list');
             if (alertList) {
                 alertList.innerHTML = '';
-                let alerts = [];
+                let alertShown = false;
+                const heavyRainCodes = [95, 96, 99, 61, 63, 65, 80, 81, 82];
+                const lightRainCodes = [51, 53, 55, 56, 57];
                 if (data.hourly && data.hourly.weathercode && data.hourly.time) {
-                    let lastType = null;
-                    for (let i = 0; i < data.hourly.weathercode.length && i < data.hourly.time.length && i < 12; i++) { // check next 12 hours
-                        const code = data.hourly.weathercode[i];
-                        const time = new Date(data.hourly.time[i]).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-                        let type = null;
-                        if ([95, 96, 99].includes(code)) {
-                            type = 'heavy';
-                        } else if ([51, 53, 55, 56, 57, 61, 63, 65, 80, 81, 82].includes(code)) {
-                            type = 'light';
+                    // Align to current hour as in hourly forecast UI
+                    const now = new Date();
+                    let currentHourIdx = data.hourly.time.findIndex(t => new Date(t).getHours() === now.getHours());
+                    if (currentHourIdx === -1) currentHourIdx = 0;
+                    // Only check the next 5 hours (same as UI)
+                    for (let i = 0; i < 5; i++) {
+                        const idx = currentHourIdx + i;
+                        if (idx >= data.hourly.weathercode.length) break;
+                        const code = data.hourly.weathercode[idx];
+                        const time = new Date(data.hourly.time[idx]).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                        if (heavyRainCodes.includes(code)) {
+                            alertList.innerHTML = `<div class="alert-item"><i class="fas fa-bolt"></i><div class="alert-content"><h4>${t('alert_heavy_rain_title')}</h4><p>${t('alert_heavy_rain_desc', { time })}</p></div></div>`;
+                            alertShown = true;
+                            break;
                         }
-                        if (type && type !== lastType) {
-                            if (type === 'heavy') {
-                                alerts.push({
-                                    icon: 'fas fa-bolt',
-                                    title: 'Heavy Rain Alert',
-                                    desc: `Heavy rain will happen at ${time}.`
-                                });
-                            } else if (type === 'light') {
-                                alerts.push({
-                                    icon: 'fas fa-cloud-rain',
-                                    title: 'Light Rain Alert',
-                                    desc: `There will be light rain at ${time}.`
-                                });
+                    }
+                    // If no heavy rain, scan for light rain in the same range
+                    if (!alertShown) {
+                        for (let i = 0; i < 5; i++) {
+                            const idx = currentHourIdx + i;
+                            if (idx >= data.hourly.weathercode.length) break;
+                            const code = data.hourly.weathercode[idx];
+                            const time = new Date(data.hourly.time[idx]).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                            if (lightRainCodes.includes(code)) {
+                                alertList.innerHTML = `<div class="alert-item"><i class="fas fa-cloud-rain"></i><div class="alert-content"><h4>${t('alert_light_rain_title')}</h4><p>${t('alert_light_rain_desc', { time })}</p></div></div>`;
+                                alertShown = true;
+                                break;
                             }
                         }
-                        lastType = type;
                     }
                 }
-                if (alerts.length > 0) {
-                    alerts.forEach(alert => {
-                        alertList.innerHTML += `
-                            <div class="alert-item">
-                                <i class="${alert.icon}"></i>
-                                <div class="alert-content">
-                                    <h4>${alert.title}</h4>
-                                    <p>${alert.desc}</p>
-                                </div>
-                            </div>
-                        `;
-                    });
-                } else {
-                    alertList.innerHTML = '<div class="alert-item"><div class="alert-content"><p>No weather alerts.</p></div></div>';
+                // If no alert found, show no alerts
+                if (!alertShown) {
+                    alertList.innerHTML = `<div class="alert-item"><div class="alert-content"><p>${t('weather_alert_no_alerts')}</p></div></div>`;
                 }
             }
         } catch (error) {
@@ -599,6 +669,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Move plantKey function to top-level scope above initializePlantPage
+    function plantKey(name) {
+        // If name is an object, use the English version or the first value
+        if (typeof name === 'object' && name !== null) {
+            name = name['en'] || Object.values(name)[0];
+        }
+        const match = name.match(/^([^(]+?)(?:\s*\(([^)]+)\))?$/);
+        if (!match) return name.toLowerCase().replace(/[^a-z0-9]+/g, '_');
+        const main = match[1].trim().toLowerCase().replace(/[^a-z0-9]+/g, '_');
+        const paren = match[2] ? match[2].trim().toLowerCase().replace(/[^a-z0-9]+/g, '_') : '';
+        return paren ? `${main}__${paren}` : main;
+    }
+
     // Plant Page Functions
     async function initializePlantPage() {
         const searchInput = document.getElementById('plantSearch');
@@ -611,6 +694,13 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             const res = await fetch('/plants.json');
             allPlants = await res.json();
+            window.allPlants = allPlants; // Store globally for re-rendering
+
+            // Ensure translations are loaded before rendering cards
+            if (!window.translations || Object.keys(window.translations).length === 0) {
+                const lang = localStorage.getItem('language') || 'en';
+                window.translations = await loadTranslations();
+            }
             renderPlantCards(allPlants);
         } catch (err) {
             if (plantGrid) plantGrid.innerHTML = '<p style="padding:2rem;">Failed to load plant data.</p>';
@@ -624,7 +714,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const categoryValue = categoryFilter ? categoryFilter.value : 'all';
             const seasonValue = seasonFilter ? seasonFilter.value : 'all';
             const filtered = allPlants.filter(plant => {
-                const matchesSearch = plant.name.toLowerCase().includes(searchTerm) || plant.scientific.toLowerCase().includes(searchTerm);
+                const matchesSearch = getLangField(plant.name).toLowerCase().includes(searchTerm) || getLangField(plant.scientific).toLowerCase().includes(searchTerm);
                 const matchesCategory = categoryValue === 'all' || plant.category === categoryValue;
                 const matchesSeason = seasonValue === 'all' || (Array.isArray(plant.season) ? plant.season.includes(seasonValue) : plant.season === seasonValue);
                 return matchesSearch && matchesCategory && matchesSeason;
@@ -640,82 +730,81 @@ document.addEventListener("DOMContentLoaded", function () {
         function renderPlantCards(plants) {
             if (!plantGrid) return;
             if (!plants.length) {
-                plantGrid.innerHTML = '<p style="padding:2rem;">No plants found.</p>';
+                plantGrid.innerHTML = `<p style="padding:2rem;" data-i18n="plant_no_results"></p>`;
+                updatePageTranslations();
                 return;
             }
+
             plantGrid.innerHTML = '';
             plants.forEach(plant => {
                 const card = document.createElement('div');
                 card.className = 'plant-card';
                 card.dataset.category = plant.category;
                 card.dataset.season = plant.season;
+
+                const nameKey = `plant_${plantKey(plant.name)}_name`;
+                const descKey = `plant_${plantKey(plant.name)}_desc`;
+
+                // Build season text from data
+                let seasonDisplay = '';
+                if (Array.isArray(plant.season)) {
+                    seasonDisplay = plant.season.map(season => {
+                        const seasonKey = 'plant_season_' + season.replace(/[-\s]/g, '_').toLowerCase();
+                        return t(seasonKey);
+                    }).join(', ');
+                } else if (plant.season) {
+                    const seasonKey = 'plant_season_' + plant.season.replace(/[-\s]/g, '_').toLowerCase();
+                    seasonDisplay = t(seasonKey);
+                }
+
                 card.innerHTML = `
                     <div class="plant-image">
-                        <img src="${plant.image}" alt="${plant.name}">
+                        <img src="${plant.image}" alt="${getLangField(plant.name)}">
                     </div>
                     <div class="plant-info">
-                        <h3>${plant.name}</h3>
-                        <p class="scientific-name">${plant.scientific}</p>
+                        <h3>${getLangField(plant.name)}</h3>
+                        <p class="scientific-name">${getLangField(plant.scientific)}</p>
                         <div class="plant-details">
-                            <p><strong>Growing Season:</strong> ${
-                                Array.isArray(plant.season)
-                                    ? plant.season.map(s => s.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())).join(', ')
-                                    : plant.season.charAt(0).toUpperCase() + plant.season.slice(1).replace('-', ' ') + ' Season'
-                            }</p>
-                            <p><strong>Best Regions:</strong> ${plant.regions}</p>
-                            <p><strong>Soil Type:</strong> ${plant.soil}</p>
-                            <p><strong>Water Needs:</strong> ${plant.water}</p>
+                            <p><strong data-i18n="plant_growing_season">Growing Season:</strong> ${seasonDisplay}</p>
+                            <p><strong data-i18n="plant_best_regions">Best Regions:</strong> ${getLangField(plant.regions)}</p>
+                            <p><strong data-i18n="plant_soil_type">Soil Type:</strong> ${getLangField(plant.soil)}</p>
+                            <p><strong data-i18n="plant_water_needs">Water Needs:</strong> ${getLangField(plant.water)}</p>
                         </div>
-                        <button class="details-btn">View Details</button>
+                        <button class="details-btn" data-i18n="plant_view_details">View Details</button>
                     </div>
                 `;
-                // Add modal event
-                card.querySelector('.details-btn').addEventListener('click', function(e) {
-                    showPlantDetails(plant);
-                });
                 plantGrid.appendChild(card);
+            });
+            // Re-apply translations after cards are added to the DOM
+            updatePageTranslations();
+
+            // Attach event listeners to all details buttons after rendering
+            const detailButtons = plantGrid.querySelectorAll('.details-btn');
+            detailButtons.forEach((btn, idx) => {
+                btn.addEventListener('click', () => {
+                    showPlantDetails(plants[idx]);
+                });
             });
         }
 
         // Modal for plant details
         function showPlantDetails(plant) {
-            // Create modal content
-            const modalContent = `
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <h2>${plant.name}</h2>
-                    <p class="scientific-name">${plant.scientific}</p>
-                    <div class="plant-description">
-                        <p>${plant.description || 'No description available.'}</p>
-                    </div>
-                </div>
+            const modal = document.getElementById('plant-modal');
+            const modalBody = document.getElementById('plant-modal-body');
+            if (!modal || !modalBody) return;
+
+            modalBody.innerHTML = `
+                <h2>${getLangField(plant.name)}</h2>
+                <p>${getLangField(plant.description) || t('plant_no_description')}</p>
             `;
-            // Create and show modal
-            const modal = document.createElement('div');
-            modal.className = 'plant-modal';
-            modal.innerHTML = modalContent;
-            document.body.appendChild(modal);
-            // Add modal styles
-            const style = document.createElement('style');
-            style.textContent = `
-                .plant-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; z-index: 1000; }
-                .modal-content { background: white; padding: 2rem; border-radius: 12px; max-width: 600px; width: 90%; max-height: 90vh; overflow-y: auto; position: relative; }
-                .close-modal { position: absolute; right: 1rem; top: 1rem; font-size: 1.5rem; cursor: pointer; color: #666; }
-                .close-modal:hover { color: #333; }
-            `;
-            document.head.appendChild(style);
-            // Close modal functionality
-            const closeBtn = modal.querySelector('.close-modal');
-            closeBtn.onclick = function() {
-                document.body.removeChild(modal);
-                document.head.removeChild(style);
+            modal.style.display = 'flex';
+
+            document.getElementById('close-plant-modal').onclick = () => {
+                modal.style.display = 'none';
             };
-            // Close modal when clicking outside
-            modal.onclick = function(event) {
-                if (event.target === modal) {
-                    document.body.removeChild(modal);
-                    document.head.removeChild(style);
-                }
+            // Close modal when clicking outside content
+            modal.onclick = (e) => {
+                if (e.target === modal) modal.style.display = 'none';
             };
         }
     }
@@ -724,4 +813,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.querySelector('.plant-grid')) {
         initializePlantPage();
     }
+
+    // === Settings Page Logic ===
+    // ... rest of the code remains unchanged ...
 });

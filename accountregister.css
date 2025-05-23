@@ -60,6 +60,8 @@
     position: absolute;
     left: 1rem;
     color: #95a5a6;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .input-group input,
@@ -79,11 +81,11 @@
     outline: none;
 }
 
-.toggle-password {
-    position: absolute;
+.input-group .toggle-password {
     right: 1rem;
+    left: auto;
     cursor: pointer;
-    color: #95a5a6;
+    pointer-events: auto;
 }
 
 .password-strength {

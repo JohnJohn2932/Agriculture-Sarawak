@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plant Information - GreenGrow Sarawak</title>
+    <title data-i18n="plant_page_title">Plant Information - GreenGrow Sarawak</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="plant.css">
     <script src="script.js" defer></script>
@@ -20,50 +20,49 @@
         </div>
         <nav class="nav-container" style="display: flex; justify-content: center;">
             <ul class="nav-links" style="display: flex; gap: 2rem; justify-content: center; align-items: center;">
-                <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="weather.html">Weather</a></li>
-                <li><a href="plant.html">Plant</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="weather.html" data-i18n="nav_weather">Weather</a></li>
+                <li><a href="plant.html" data-i18n="nav_plant">Plant</a></li>
             </ul>
         </nav>
         <div class="header-auth">
-            <a href="accountregister.html">Register</a>
+            <a href="accountregister.html" data-i18n="header_register">Register</a>
             <span class="divider">|</span>
-            <a href="accountlogin.html">Login</a>
+            <a href="accountlogin.html" data-i18n="header_login">Login</a>
         </div>
     </header>
 
     <!-- Plant Hero Section -->
     <section class="plant-hero">
         <div class="hero-content">
-            <h1>Plant Information</h1>
-            <p>Discover the diverse flora of Sarawak</p>
+            <h1 data-i18n="plant_hero_title">Plant Information</h1>
+            <p data-i18n="plant_hero_subtitle">Discover the diverse flora of Sarawak</p>
         </div>
     </section>
 
     <!-- Search and Filter Section -->
     <section class="search-filter">
         <div class="search-container">
-            <input type="text" id="plantSearch" placeholder="Search for plants...">
+            <input type="text" id="plantSearch" placeholder="Search for plants..." data-i18n-placeholder="plant_search_placeholder">
             <button class="search-btn">
                 <i class="fas fa-search"></i>
             </button>
         </div>
         <div class="filter-container">
-            <select id="categoryFilter">
-                <option value="all">All Categories</option>
-                <option value="crops">Crops</option>
-                <option value="vegetables">Vegetables</option>
-                <option value="fruits">Fruits</option>
-                <option value="herbs">Herbs</option>
-                <option value="ornamental">Ornamental</option>
+            <select id="categoryFilter" data-i18n-options="plant_category_options">
+                <option value="all" data-i18n="plant_category_all">All Categories</option>
+                <option value="crops" data-i18n="plant_category_crops">Crops</option>
+                <option value="vegetables" data-i18n="plant_category_vegetables">Vegetables</option>
+                <option value="fruits" data-i18n="plant_category_fruits">Fruits</option>
+                <option value="herbs" data-i18n="plant_category_herbs">Herbs</option>
+                <option value="ornamental" data-i18n="plant_category_ornamental">Ornamental</option>
             </select>
-            <select id="seasonFilter">
-                <option value="all">All Seasons</option>
-                <option value="early-wet">Early Wet Season</option>
-                <option value="late-wet">Late Wet Season</option>
-                <option value="early-dry">Early Dry Season</option>
-                <option value="late-dry">Late Dry Season</option>
+            <select id="seasonFilter" data-i18n-options="plant_season_options">
+                <option value="all" data-i18n="plant_season_all">All Seasons</option>
+                <option value="early-wet" data-i18n="plant_season_early_wet">Early Wet Season</option>
+                <option value="late-wet" data-i18n="plant_season_late_wet">Late Wet Season</option>
+                <option value="early-dry" data-i18n="plant_season_early_dry">Early Dry Season</option>
+                <option value="late-dry" data-i18n="plant_season_late_dry">Late Dry Season</option>
             </select>
         </div>
     </section>
@@ -75,27 +74,27 @@
 
     <!-- Plant Care Tips Section -->
     <section class="care-tips">
-        <h2>Plant Care Tips</h2>
+        <h2 data-i18n="plant_care_tips_title">Plant Care Tips</h2>
         <div class="tips-grid">
             <div class="tip-card">
                 <i class="fas fa-sun"></i>
-                <h3>Sunlight</h3>
-                <p>Most plants in Sarawak need 6-8 hours of sunlight daily. Consider using shade nets during peak hours.</p>
+                <h3 data-i18n="plant_care_sunlight_title">Sunlight</h3>
+                <p data-i18n="plant_care_sunlight_desc">Most plants in Sarawak need 6-8 hours of sunlight daily. Consider using shade nets during peak hours.</p>
             </div>
             <div class="tip-card">
                 <i class="fas fa-tint"></i>
-                <h3>Watering</h3>
-                <p>Water plants early morning or late evening. Adjust frequency based on rainfall and season.</p>
+                <h3 data-i18n="plant_care_watering_title">Watering</h3>
+                <p data-i18n="plant_care_watering_desc">Water plants early morning or late evening. Adjust frequency based on rainfall and season.</p>
             </div>
             <div class="tip-card">
                 <i class="fas fa-seedling"></i>
-                <h3>Soil</h3>
-                <p>Use well-draining soil rich in organic matter. Regular soil testing helps maintain optimal conditions.</p>
+                <h3 data-i18n="plant_care_soil_title">Soil</h3>
+                <p data-i18n="plant_care_soil_desc">Use well-draining soil rich in organic matter. Regular soil testing helps maintain optimal conditions.</p>
             </div>
             <div class="tip-card">
                 <i class="fas fa-bug"></i>
-                <h3>Pest Control</h3>
-                <p>Regular inspection and natural pest control methods are recommended for sustainable farming.</p>
+                <h3 data-i18n="plant_care_pest_control_title">Pest Control</h3>
+                <p data-i18n="plant_care_pest_control_desc">Regular inspection and natural pest control methods are recommended for sustainable farming.</p>
             </div>
         </div>
     </section>
@@ -104,41 +103,42 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>GreenGrow Sarawak</h3>
-                <p>Empowering farmers with technology and sustainable solutions.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
+                <h3 data-i18n="site_title">GreenGrow Sarawak</h3>
+                <p data-i18n="footer_description">Empowering farmers with technology and sustainable solutions.</p>
             </div>
             <div class="footer-section">
-                <h3>Quick Links</h3>
+                <h3 data-i18n="footer_quick_links_header">Quick Links</h3>
                 <ul>
-                    <li><a href="marketplace.html">Marketplace</a></li>
-                    <li><a href="weather.html">Weather</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                    <li><a href="weather.html" data-i18n="nav_weather">Weather</a></li>
+                    <li><a href="plant.html" data-i18n="nav_plant">Plant</a></li>
+                    <!-- <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li> -->
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Kuching, Sarawak</p>
-                <p><i class="fas fa-phone"></i> +60 12-345 6789</p>
-                <p><i class="fas fa-envelope"></i> info@greengrow.com</p>
+                <h3 data-i18n="footer_contact_header">Contact Us</h3>
+                <p data-i18n="footer_contact_address"><i class="fas fa-map-marker-alt"></i> Kuching, Sarawak</p>
+                <p data-i18n="footer_contact_phone"><i class="fas fa-phone"></i> +60 12-345 6789</p>
+                <p data-i18n="footer_contact_email"><i class="fas fa-envelope"></i> info@greengrow.com</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 GreenGrow Sarawak. All rights reserved.</p>
+            <p data-i18n="footer_copyright">&copy; 2025 GreenGrow Sarawak. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Profile Dropdown -->
     <div class="profile-dropdown" id="profileDropdown" style="display: none; position: absolute; top: 110%; right: 0; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border-radius: 8px; min-width: 140px; z-index: 999;">
-        <a href="account.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">My Account</a>
-        <a href="dashboard.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">Dashboard</a>
-        <a href="#" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">Setting</a>
-        <a href="#" id="logout-link" class="dropdown-item" style="display: block; padding: 10px 16px; color: #c00; text-decoration: none;">Log Out</a>
+        <a href="account.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;" data-i18n="dropdown_my_account">My Account</a>
+        <a href="settings.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;" data-i18n="dropdown_settings">Setting</a>
+        <a href="#" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none;" data-i18n="dropdown_logout">Logout</a>
+    </div>
+
+    <div id="plant-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-btn" id="close-plant-modal">&times;</span>
+            <div id="plant-modal-body"></div>
+        </div>
     </div>
 </body>
 </html> 

@@ -20,17 +20,16 @@
         </div>
         <nav class="nav-container" style="display: flex; justify-content: center;">
             <ul class="nav-links" style="display: flex; gap: 2rem; justify-content: center; align-items: center;">
-                <!-- <li><a href="index.html">Home</a></li> -->
-                <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="weather.html">Weather</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="weather.html" data-i18n="nav_weather">Weather</a></li>
+                <li><a href="plant.html" data-i18n="nav_plant">Plant</a></li>
+                <!-- <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li> -->
             </ul>
         </nav>
         <div class="header-auth">
-            <a href="accountregister.html">Register</a>
+            <a href="accountregister.html" data-i18n="header_register">Register</a>
             <span class="divider">|</span>
-            <a href="accountlogin.html">Login</a>
+            <a href="accountlogin.html" data-i18n="header_login">Login</a>
         </div>
     </header>
 
@@ -38,14 +37,14 @@
     <main class="registration-container">
         <div class="registration-box">
             <div class="registration-header">
-                <h2>Create Your Account</h2>
-                <p>Join GreenGrow Sarawak and start your agricultural journey</p>
+                <h2 data-i18n="accountregister.title">Create Your Account</h2>
+                <p data-i18n="accountregister.description">Join GreenGrow Sarawak and start your agricultural journey</p>
             </div>
 
             <form id="registerForm" method="POST" action="/register">
                 <div id="messageBox" class="message-box" style="display: none;"></div>
                 <div class="form-group">
-                    <label for="fullName">Username</label>
+                    <label for="fullName" data-i18n="accountregister.username">Username</label>
                     <div class="input-group">
                         <i class="fas fa-user"></i>
                         <input type="text" id="fullName" name="fullName" placeholder="Enter your username" required maxlength="11" pattern="^[^\s]{1,11}$" title="Username must be 1-11 characters, no spaces">
@@ -54,7 +53,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email Address</label>
+                    <label for="email" data-i18n="accountregister.email">Email Address</label>
                     <div class="input-group">
                         <i class="fas fa-envelope"></i>
                         <input type="email" id="email" name="email" placeholder="Enter your email" required>
@@ -118,7 +117,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password" data-i18n="accountregister.password">Password</label>
                     <div class="input-group">
                         <i class="fas fa-lock"></i>
                         <input type="password" id="password" name="password" placeholder="Create a password" required>
@@ -144,7 +143,7 @@
                     <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
                 </div>
 
-                <button type="submit" class="submit-btn">Create Account</button>
+                <button type="submit" class="submit-btn" data-i18n="accountregister.submit">Create Account</button>
 
                 <div class="login-link">
                     Already have an account? <a href="accountlogin.html">Log in</a>
@@ -157,12 +156,11 @@
             <div class="image-overlay">
                 <h3>Join Our Community</h3>
                 <p>Connect with farmers, suppliers, and buyers across Sarawak</p>
-                <ul class="benefits-list">
-                    <li><i class="fas fa-check-circle"></i> Access to premium marketplace</li>
-                    <li><i class="fas fa-check-circle"></i> Real-time weather updates</li>
-                    <li><i class="fas fa-check-circle"></i> Agricultural resources</li>
-                    <li><i class="fas fa-check-circle"></i> Community support</li>
-                </ul>
+                <div class="benefits-list">
+                    <li><i class="fas fa-check-circle"></i> Access to weather forecasts</li>
+                    <li><i class="fas fa-check-circle"></i> Plant information database</li>
+                    <li><i class="fas fa-check-circle"></i> Farming tips and guides</li>
+                </div>
             </div>
         </div>
     </main>
@@ -171,34 +169,27 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>GreenGrow Sarawak</h3>
-                <p>Empowering farmers with technology and sustainable solutions.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
+                <h3 data-i18n="site_title">GreenGrow Sarawak</h3>
+                <p data-i18n="footer_description">Empowering farmers with technology and sustainable solutions.</p>
             </div>
             <div class="footer-section">
-                <h3>Quick Links</h3>
+                <h3 data-i18n="footer_quick_links_header">Quick Links</h3>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="marketplace.html">Marketplace</a></li>
-                    <li><a href="weather.html">Weather</a></li>
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                    <li><a href="weather.html" data-i18n="nav_weather">Weather</a></li>
+                    <li><a href="plant.html" data-i18n="nav_plant">Plant</a></li>
+                    <!-- <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li> -->
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Kuching, Sarawak</p>
-                <p><i class="fas fa-phone"></i> +60 12-345 6789</p>
-                <p><i class="fas fa-envelope"></i> info@greengrow.com</p>
+                <h3 data-i18n="footer_contact_header">Contact Us</h3>
+                <p data-i18n="footer_contact_address"><i class="fas fa-map-marker-alt"></i> Kuching, Sarawak</p>
+                <p data-i18n="footer_contact_phone"><i class="fas fa-phone"></i> +60 12-345 6789</p>
+                <p data-i18n="footer_contact_email"><i class="fas fa-envelope"></i> info@greengrow.com</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 GreenGrow Sarawak. All rights reserved.</p>
+            <p data-i18n="footer_copyright">&copy; 2025 GreenGrow Sarawak. All rights reserved.</p>
         </div>
     </footer>
 

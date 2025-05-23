@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather - GreenGrow Sarawak</title>
+    <title data-i18n="weather_page_title">Weather - GreenGrow Sarawak</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="weather.css">
     <script src="script.js" defer></script>
@@ -20,45 +20,44 @@
         </div>
         <nav class="nav-container" style="display: flex; justify-content: center;">
             <ul class="nav-links" style="display: flex; gap: 2rem; justify-content: center; align-items: center;">
-                <!-- <li><a href="index.html">Home</a></li> -->
-                <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="weather.html">Weather</a></li>
-                <li><a href="plant.html">Plant</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="weather.html" data-i18n="nav_weather">Weather</a></li>
+                <li><a href="plant.html" data-i18n="nav_plant">Plant</a></li>
+                <!-- <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li> -->
             </ul>
         </nav>
         <div class="header-auth">
-            <a href="accountregister.html">Register</a>
+            <a href="accountregister.html" data-i18n="header_register">Register</a>
             <span class="divider">|</span>
-            <a href="accountlogin.html">Login</a>
+            <a href="accountlogin.html" data-i18n="header_login">Login</a>
         </div>
     </header>
 
     <!-- Weather Hero Section -->
     <section class="weather-hero">
         <div class="weather-hero-content">
-            <h1>Weather Forecast</h1>
-            <p>Real-time weather updates for your farming needs</p>
+            <h1 data-i18n="weather_hero_title">Weather Forecast</h1>
+            <p data-i18n="weather_hero_subtitle">Real-time weather updates for your farming needs</p>
             <div class="location-search">
                 <div class="location-select">
-                    <select id="location" class="form-control">
-                        <option value="Kuching">Kuching</option>
-                        <option value="Miri">Miri</option>
-                        <option value="Sibu">Sibu</option>
-                        <option value="Bintulu">Bintulu</option>
-                        <option value="Limbang">Limbang</option>
-                        <option value="Sarikei">Sarikei</option>
-                        <option value="Sri Aman">Sri Aman</option>
-                        <option value="Kapit">Kapit</option>
-                        <option value="Mukah">Mukah</option>
-                        <option value="Betong">Betong</option>
-                        <option value="Samarahan">Samarahan</option>
-                        <option value="Serian">Serian</option>
-                        <option value="Lundu">Lundu</option>
+                    <select id="location" class="form-control" data-i18n-placeholder="weather_select_location">
+                        <option value="Kuching" data-i18n="location_kuching">Kuching</option>
+                        <option value="Miri" data-i18n="location_miri">Miri</option>
+                        <option value="Sibu" data-i18n="location_sibu">Sibu</option>
+                        <option value="Bintulu" data-i18n="location_bintulu">Bintulu</option>
+                        <option value="Limbang" data-i18n="location_limbang">Limbang</option>
+                        <option value="Sarikei" data-i18n="location_sarikei">Sarikei</option>
+                        <option value="Sri Aman" data-i18n="location_sri_aman">Sri Aman</option>
+                        <option value="Kapit" data-i18n="location_kapit">Kapit</option>
+                        <option value="Mukah" data-i18n="location_mukah">Mukah</option>
+                        <option value="Betong" data-i18n="location_betong">Betong</option>
+                        <option value="Samarahan" data-i18n="location_samarahan">Samarahan</option>
+                        <option value="Serian" data-i18n="location_serian">Serian</option>
+                        <option value="Lundu" data-i18n="location_lundu">Lundu</option>
                     </select>
                     <i class="fas fa-chevron-down"></i>
                 </div>
-                <button class="search-btn">
+                <button class="search-btn" data-i18n="weather_search">
                     <i class="fas fa-search"></i>
                 </button>
             </div>
@@ -71,8 +70,8 @@
             <div class="weather-card main-weather">
                 <div class="weather-header">
                     <div class="location-info">
-                        <h2 id="weatherLocation">Kuching, Sarawak</h2>
-                        <p>Last updated: <span id="lastUpdated">Just now</span></p>
+                        <h2 id="weatherLocation" data-i18n="weather_location">Kuching, Sarawak</h2>
+                        <p><span data-i18n="weather_last_updated">Last updated:</span> <span id="lastUpdated">Just now</span></p>
                     </div>
                     <div class="weather-icon" id="weatherIcon">
                         <i class="fas fa-cloud-sun"></i>
@@ -81,20 +80,23 @@
                 <div class="weather-details">
                     <div class="temperature">
                         <span class="temp-value" id="temperature">28°C</span>
-                        <span class="temp-feels" id="feelsLike">Feels like 30°C</span>
+                        <span class="temp-feels" id="feelsLike" data-i18n="weather_feels_like">Feels like 30°C</span>
                     </div>
                     <div class="weather-stats">
                         <div class="stat-item">
                             <i class="fas fa-wind"></i>
                             <span id="wind">12 km/h</span>
+                            <span data-i18n="weather_wind">Wind</span>
                         </div>
                         <div class="stat-item">
                             <i class="fas fa-tint"></i>
                             <span id="humidity">65%</span>
+                            <span data-i18n="weather_humidity">Humidity</span>
                         </div>
                         <div class="stat-item">
                             <i class="fas fa-compress-arrows-alt"></i>
                             <span id="pressure">1012 hPa</span>
+                            <span data-i18n="weather_pressure">Pressure</span>
                         </div>
                     </div>
                 </div>
@@ -102,10 +104,10 @@
 
             <!-- Hourly Forecast -->
             <div class="weather-card hourly-forecast">
-                <h3>Hourly Forecast</h3>
+                <h3 data-i18n="weather_hourly_forecast_title">Hourly Forecast</h3>
                 <div class="hourly-list">
                     <div class="hourly-item">
-                        <span class="hour">Now</span>
+                        <span class="hour" data-i18n="weather_now">Now</span>
                         <i class="fas fa-cloud-sun"></i>
                         <span class="temp">28°C</span>
                     </div>
@@ -134,10 +136,10 @@
 
             <!-- Daily Forecast -->
             <div class="weather-card daily-forecast">
-                <h3>7-Day Forecast</h3>
+                <h3 data-i18n="weather_daily_forecast_title">7-Day Forecast</h3>
                 <div class="daily-list">
                     <div class="daily-item">
-                        <span class="day">Today</span>
+                        <span class="day" data-i18n="weather_today">Today</span>
                         <i class="fas fa-cloud-sun"></i>
                         <div class="temp-range">
                             <span class="max">30°C</span>
@@ -197,14 +199,19 @@
 
             <!-- Weather Alerts -->
             <div class="weather-card weather-alerts">
-                <h3>Weather Alerts</h3>
+                <h3 data-i18n="weather_alerts_title">Weather Alerts</h3>
                 <div class="alert-list">
                     <div class="alert-item">
                         <i class="fas fa-exclamation-triangle"></i>
                         <div class="alert-content">
-                            <h4>Heavy Rain Warning</h4>
-                            <p>Expected heavy rainfall in the afternoon. Take necessary precautions.</p>
-                            <span class="alert-time">Issued: 10:00 AM</span>
+                            <h4 data-i18n="weather_alert_heavy_rain_title">Heavy Rain Warning</h4>
+                            <p data-i18n="weather_alert_heavy_rain_desc">Expected heavy rainfall in the afternoon. Take necessary precautions.</p>
+                            <span class="alert-time"><span data-i18n="weather_alert_issued">Issued:</span> 10:00 AM</span>
+                        </div>
+                    </div>
+                    <div class="alert-item">
+                        <div class="alert-content">
+                            <p data-i18n="weather_alert_no_alerts">No weather alerts.</p>
                         </div>
                     </div>
                 </div>
@@ -216,34 +223,27 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>GreenGrow Sarawak</h3>
-                <p>Empowering farmers with technology and sustainable solutions.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
+                <h3 data-i18n="site_title">GreenGrow Sarawak</h3>
+                <p data-i18n="footer_description">Empowering farmers with technology and sustainable solutions.</p>
             </div>
             <div class="footer-section">
-                <h3>Quick Links</h3>
+                <h3 data-i18n="footer_quick_links_header">Quick Links</h3>
                 <ul>
-                    <!-- <li><a href="index.html">Home</a></li> -->
-                    <li><a href="marketplace.html">Marketplace</a></li>
-                    <li><a href="weather.html">Weather</a></li>
-                    <li><a href="plant.html">Plant</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                    <li><a href="weather.html" data-i18n="nav_weather">Weather</a></li>
+                    <li><a href="plant.html" data-i18n="nav_plant">Plant</a></li>
+                    <!-- <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li> -->
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Kuching, Sarawak</p>
-                <p><i class="fas fa-phone"></i> +60 12-345 6789</p>
-                <p><i class="fas fa-envelope"></i> info@greengrow.com</p>
+                <h3 data-i18n="footer_contact_header">Contact Us</h3>
+                <p data-i18n="footer_contact_address"><i class="fas fa-map-marker-alt"></i> Kuching, Sarawak</p>
+                <p data-i18n="footer_contact_phone"><i class="fas fa-phone"></i> +60 12-345 6789</p>
+                <p data-i18n="footer_contact_email"><i class="fas fa-envelope"></i> info@greengrow.com</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 GreenGrow Sarawak. All rights reserved.</p>
+            <p data-i18n="footer_copyright">&copy; 2025 GreenGrow Sarawak. All rights reserved.</p>
         </div>
     </footer>
 

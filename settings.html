@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="profile_settings_page_title">Profile Settings - GreenGrow Sarawak</title>
+    <title>Settings - GreenGrow Sarawak</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="settings.css">
     <script src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +23,7 @@
                 <li><a href="index.html" data-i18n="nav_home">Home</a></li>
                 <li><a href="weather.html" data-i18n="nav_weather">Weather</a></li>
                 <li><a href="plant.html" data-i18n="nav_plant">Plant</a></li>
+                <!-- <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li> -->
             </ul>
         </nav>
         <div class="header-auth">
@@ -31,32 +33,26 @@
         </div>
     </header>
 
-    <!-- Profile Settings Section -->
-    <div class="profile-container">
-        <h1 data-i18n="profilesetting.title">Profile Settings</h1>
-        <p data-i18n="profilesetting.description">Update your profile information here.</p>
-        <div class="profile-pic-section">
-            <img id="profile-pic" src="assets/default-profile.png" alt="Profile Picture">
-            <input type="file" id="profile-upload" accept="image/*">
-            <label for="profile-upload" class="upload-btn" data-i18n="profile_change_picture">Change Picture</label>
+    <!-- Settings Section -->
+    <main class="settings-container">
+        <div class="section-header">
+            <h2 data-i18n="settings_title">Account Settings</h2>
+            <p data-i18n="settings_subtitle">Manage your profile and preferences.</p>
         </div>
 
-        <form class="profile-form">
-            <label for="name" data-i18n="profile_name_label">Full Name</label>
-            <input type="text" id="name" placeholder="Enter your full name" data-i18n-placeholder="profile_name_placeholder">
-
-            <label for="email" data-i18n="profile_email_label">Email Address</label>
-            <input type="email" id="email" placeholder="Enter your email" data-i18n-placeholder="profile_email_placeholder">
-
-            <label for="password" data-i18n="profile_password_label">New Password</label>
-            <input type="password" id="password" placeholder="Enter new password" data-i18n-placeholder="profile_password_placeholder">
-
-            <label for="address" data-i18n="profile_address_label">Address</label>
-            <input type="text" id="address" placeholder="Enter your address" data-i18n-placeholder="profile_address_placeholder">
-
-            <button type="submit" class="save-btn" data-i18n="profile_save_changes">Save Changes</button>
-        </form>
-    </div>
+        <div class="settings-card">
+            <h3 data-i18n="settings_language_title">Language Preferences</h3>
+            <div class="form-group">
+                <label for="language" data-i18n="settings_select_language">Select Language:</label>
+                <select id="language" name="language">
+                    <option value="en" data-i18n="settings.language.en">English</option>
+                    <option value="ms" data-i18n="settings.language.ms">Malay</option>
+                    <option value="zh" data-i18n="settings.language.zh">Mandarin</option>
+                    <!-- Add more language options here -->
+                </select>
+            </div>
+        </div>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -85,6 +81,5 @@
             <p data-i18n="footer_copyright">&copy; 2025 GreenGrow Sarawak. All rights reserved.</p>
         </div>
     </footer>
-
 </body>
-</html>
+</html> 

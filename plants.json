@@ -1,112 +1,152 @@
 [
   {
-    "name": "Rice (Padi)",
-    "scientific": "Oryza sativa",
+    "name": { "en": "Rice (Padi)", "ms": "Padi", "zh": "稻米 (Padi)" },
+    "scientific": { "en": "Oryza sativa", "ms": "Oryza sativa", "zh": "Oryza sativa" },
     "category": "crops",
     "season": "early-wet",
-    "regions": "Kuching, Samarahan, Sri Aman",
-    "soil": "Clay loam, well-drained",
-    "water": "High",
+    "regions": { "en": "Kuching, Samarahan, Sri Aman", "ms": "Kuching, Samarahan, Sri Aman", "zh": "古晋, 三马拉汉, 斯里阿曼" },
+    "soil": { "en": "Clay loam, well-drained", "ms": "Liat berpasir, mengalirkan air dengan baik", "zh": "粘壤土, 排水良好" },
+    "water": { "en": "High", "ms": "Tinggi", "zh": "高" },
     "image": "assets/plants/rice.jpg",
-    "description": "Rice is a staple food crop grown in flooded fields, especially during the wet season. It requires high water and is a key crop in Sarawak's agriculture."
+    "description": {
+      "en": "Rice is a staple food crop grown in flooded fields, especially during the wet season. It requires high water and is a key crop in Sarawak's agriculture.",
+      "ms": "Padi adalah tanaman makanan ruji yang ditanam di sawah yang dibanjiri, terutamanya semasa musim hujan. Ia memerlukan air yang banyak dan merupakan tanaman utama dalam pertanian Sarawak.",
+      "zh": "稻米是主要的粮食作物，通常在雨季期间种植在水田中。它需要大量水分，是砂拉越农业的重要作物。"
+    }
   },
   {
-    "name": "Black Pepper",
-    "scientific": "Piper nigrum",
+    "name": { "en": "Black Pepper", "ms": "Lada Hitam", "zh": "黑胡椒" },
+    "scientific": { "en": "Piper nigrum", "ms": "Piper nigrum", "zh": "Piper nigrum" },
     "category": "crops",
     "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
-    "regions": "Kuching, Serian, Samarahan",
-    "soil": "Rich, well-drained",
-    "water": "Moderate",
+    "regions": { "en": "Kuching, Serian, Samarahan", "ms": "Kuching, Serian, Samarahan", "zh": "古晋, 实里安, 三马拉汉" },
+    "soil": { "en": "Rich, well-drained", "ms": "Kaya, mengalirkan air dengan baik", "zh": "肥沃, 排水良好" },
+    "water": { "en": "Moderate", "ms": "Sederhana", "zh": "中等" },
     "image": "assets/plants/pepper.jpg",
-    "description": "Black pepper is a climbing vine cultivated for its spicy fruit. Sarawak is famous for its high-quality black pepper, which grows well year-round."
+    "description": {
+      "en": "Black pepper is a climbing vine cultivated for its spicy fruit. Sarawak is famous for its high-quality black pepper, which grows well year-round.",
+      "ms": "Lada hitam adalah pokok memanjat yang ditanam untuk buahnya yang pedas. Sarawak terkenal dengan lada hitam berkualiti tinggi yang tumbuh dengan baik sepanjang tahun.",
+      "zh": "黑胡椒是一种藤本植物，以其辛辣的果实而闻名。砂拉越以高品质的黑胡椒著称，全年均可良好生长。"
+    }
   },
   {
-    "name": "Durian",
-    "scientific": "Durio zibethinus",
+    "name": { "en": "Durian", "ms": "Durian", "zh": "榴莲" },
+    "scientific": { "en": "Durio zibethinus", "ms": "Durio zibethinus", "zh": "Durio zibethinus" },
     "category": "fruits",
     "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
-    "regions": "Kuching, Serian, Sri Aman",
-    "soil": "Deep, fertile, well-drained",
-    "water": "High",
+    "regions": { "en": "Kuching, Serian, Sri Aman", "ms": "Kuching, Serian, Sri Aman", "zh": "古晋, 实里安, 斯里阿曼" },
+    "soil": { "en": "Deep, fertile, well-drained", "ms": "Dalam, subur, mengalirkan air dengan baik", "zh": "深厚, 肥沃, 排水良好" },
+    "water": { "en": "High", "ms": "Tinggi", "zh": "高" },
     "image": "assets/plants/durian.jpg",
-    "description": "Durian is known as the 'king of fruits' in Southeast Asia. It produces large, spiky fruits with a strong aroma and creamy texture, typically harvested in the late dry to early wet season."
+    "description": {
+      "en": "Durian is known as the 'king of fruits' in Southeast Asia. It produces large, spiky fruits with a strong aroma and creamy texture, typically harvested in the late dry to early wet season.",
+      "ms": "Durian dikenali sebagai 'raja buah' di Asia Tenggara. Ia menghasilkan buah besar berduri dengan aroma yang kuat dan tekstur berkrim, biasanya dituai pada akhir musim kering hingga awal musim hujan.",
+      "zh": "榴莲被誉为东南亚的\"水果之王\"。它结出大型带刺的果实，气味浓烈，质地细腻，通常在旱季末至雨季初收获。"
+    }
   },
   {
-    "name": "Pineapple",
-    "scientific": "Ananas comosus",
+    "name": { "en": "Pineapple", "ms": "Nanas", "zh": "菠萝" },
+    "scientific": { "en": "Ananas comosus", "ms": "Ananas comosus", "zh": "Ananas comosus" },
     "category": "fruits",
     "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
-    "regions": "Kuching, Samarahan, Serian",
-    "soil": "Sandy loam, acidic",
-    "water": "Moderate",
+    "regions": { "en": "Kuching, Samarahan, Serian", "ms": "Kuching, Samarahan, Serian", "zh": "古晋, 三马拉汉, 实里安" },
+    "soil": { "en": "Sandy loam, acidic", "ms": "Liat berpasir, berasid", "zh": "砂质壤土, 酸性" },
+    "water": { "en": "Moderate", "ms": "Sederhana", "zh": "中等" },
     "image": "assets/plants/pineapple.jpg",
-    "description": "Pineapple is a tropical fruit with sweet, juicy flesh. It thrives in well-drained, acidic soils and can be grown throughout the year in Sarawak."
+    "description": {
+      "en": "Pineapple is a tropical fruit with sweet, juicy flesh. It thrives in well-drained, acidic soils and can be grown throughout the year in Sarawak.",
+      "ms": "Nanas adalah buah tropika dengan isi yang manis dan berair. Ia tumbuh subur di tanah berasid yang mengalirkan air dengan baik dan boleh ditanam sepanjang tahun di Sarawak.",
+      "zh": "菠萝是一种热带水果，果肉甜美多汁。它适合在排水良好、酸性的土壤中生长，在砂拉越全年可种植。"
+    }
   },
   {
-    "name": "Kangkung (Water Spinach)",
-    "scientific": "Ipomoea aquatica",
+    "name": { "en": "Kangkung (Water Spinach)", "ms": "Kangkung (Bayam Air)", "zh": "空心菜 (蕹菜)" },
+    "scientific": { "en": "Ipomoea aquatica", "ms": "Ipomoea aquatica", "zh": "Ipomoea aquatica" },
     "category": "vegetables",
     "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
-    "regions": "Kuching, Samarahan, Sri Aman",
-    "soil": "Rich, moist",
-    "water": "High",
+    "regions": { "en": "Kuching, Samarahan, Sri Aman", "ms": "Kuching, Samarahan, Sri Aman", "zh": "古晋, 三马拉汉, 斯里阿曼" },
+    "soil": { "en": "Rich, moist", "ms": "Kaya, lembap", "zh": "肥沃, 湿润" },
+    "water": { "en": "High", "ms": "Tinggi", "zh": "高" },
     "image": "assets/plants/kangkung.jpg",
-    "description": "Kangkung, or water spinach, is a fast-growing leafy vegetable popular in Malaysian cuisine. It grows best in moist, nutrient-rich soils."
+    "description": {
+      "en": "Kangkung, or water spinach, is a fast-growing leafy vegetable popular in Malaysian cuisine. It grows best in moist, nutrient-rich soils.",
+      "ms": "Kangkung, atau bayam air, adalah sayur berdaun yang cepat tumbuh dan popular dalam masakan Malaysia. Ia tumbuh paling baik di tanah lembap yang kaya dengan nutrien.",
+      "zh": "空心菜，又称蕹菜，是马来西亚美食中常见的快速生长的绿叶蔬菜。最适合在湿润、富含养分的土壤中生长。"
+    }
   },
   {
-    "name": "Bendi (Okra)",
-    "scientific": "Abelmoschus esculentus",
+    "name": { "en": "Bendi (Okra)", "ms": "Bendi (Okra)", "zh": "羊角豆 (秋葵)" },
+    "scientific": { "en": "Abelmoschus esculentus", "ms": "Abelmoschus esculentus", "zh": "Abelmoschus esculentus" },
     "category": "vegetables",
     "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
-    "regions": "Kuching, Serian, Samarahan",
-    "soil": "Well-drained, fertile",
-    "water": "Moderate",
+    "regions": { "en": "Kuching, Serian, Samarahan", "ms": "Kuching, Serian, Samarahan", "zh": "古晋, 实里安, 三马拉汉" },
+    "soil": { "en": "Well-drained, fertile", "ms": "Mengalirkan air dengan baik, subur", "zh": "排水良好, 肥沃" },
+    "water": { "en": "Moderate", "ms": "Sederhana", "zh": "中等" },
     "image": "assets/plants/bendi.jpg",
-    "description": "Bendi, or okra, is a warm-season vegetable valued for its edible green pods. It is easy to grow and commonly used in stir-fries and curries."
+    "description": {
+      "en": "Bendi, or okra, is a warm-season vegetable valued for its edible green pods. It is easy to grow and commonly used in stir-fries and curries.",
+      "ms": "Bendi, atau okra, adalah sayur musim panas yang dihargai untuk buahnya yang hijau dan boleh dimakan. Ia mudah ditanam dan biasa digunakan dalam masakan tumis dan kari.",
+      "zh": "羊角豆，又称秋葵，是一种喜温蔬菜，以其可食用的绿色荚果而受到青睐。易于种植，常用于炒菜和咖喱。"
+    }
   },
   {
-    "name": "Lemongrass",
-    "scientific": "Cymbopogon citratus",
+    "name": { "en": "Lemongrass", "ms": "Serai", "zh": "香茅" },
+    "scientific": { "en": "Cymbopogon citratus", "ms": "Cymbopogon citratus", "zh": "Cymbopogon citratus" },
     "category": "herbs",
     "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
-    "regions": "Kuching, Samarahan, Serian",
-    "soil": "Well-drained, sandy",
-    "water": "Moderate",
+    "regions": { "en": "Kuching, Samarahan, Serian", "ms": "Kuching, Samarahan, Serian", "zh": "古晋, 三马拉汉, 实里安" },
+    "soil": { "en": "Well-drained, sandy", "ms": "Mengalirkan air dengan baik, berpasir", "zh": "排水良好, 砂质" },
+    "water": { "en": "Moderate", "ms": "Sederhana", "zh": "中等" },
     "image": "assets/plants/lemongrass.jpg",
-    "description": "Lemongrass is a fragrant herb used in cooking and traditional medicine. It grows well in tropical climates and is a staple in many Malaysian dishes."
+    "description": {
+      "en": "Lemongrass is a fragrant herb used in cooking and traditional medicine. It grows well in tropical climates and is a staple in many Malaysian dishes.",
+      "ms": "Serai adalah herba wangi yang digunakan dalam masakan dan perubatan tradisional. Ia tumbuh dengan baik dalam iklim tropika dan merupakan bahan asas dalam banyak hidangan Malaysia.",
+      "zh": "香茅是一种芳香草本植物，常用于烹饪和传统医药。适合热带气候，是许多马来西亚菜肴的常用原料。"
+    }
   },
   {
-    "name": "Curry Leaf",
-    "scientific": "Murraya koenigii",
+    "name": { "en": "Curry Leaf", "ms": "Daun Kari", "zh": "咖喱叶" },
+    "scientific": { "en": "Murraya koenigii", "ms": "Murraya koenigii", "zh": "Murraya koenigii" },
     "category": "herbs",
     "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
-    "regions": "Kuching, Serian, Sri Aman",
-    "soil": "Well-drained, fertile",
-    "water": "Moderate",
+    "regions": { "en": "Kuching, Serian, Sri Aman", "ms": "Kuching, Serian, Sri Aman", "zh": "古晋, 实里安, 斯里阿曼" },
+    "soil": { "en": "Well-drained, fertile", "ms": "Mengalirkan air dengan baik, subur", "zh": "排水良好, 肥沃" },
+    "water": { "en": "Moderate", "ms": "Sederhana", "zh": "中等" },
     "image": "assets/plants/curry-leaf.jpg",
-    "description": "Curry leaf is an aromatic herb essential in South Asian cooking. The leaves are used fresh for their distinctive flavor and aroma."
+    "description": {
+      "en": "Curry leaf is an aromatic herb essential in South Asian cooking. The leaves are used fresh for their distinctive flavor and aroma.",
+      "ms": "Daun kari adalah herba aromatik yang penting dalam masakan Asia Selatan. Daunnya digunakan segar untuk rasa dan aroma yang tersendiri.",
+      "zh": "咖喱叶是南亚烹饪中不可或缺的芳香草本植物。新鲜叶子用于增添独特的风味和香气。"
+    }
   },
   {
-    "name": "Orchid",
-    "scientific": "Orchidaceae",
+    "name": { "en": "Orchid", "ms": "Orkid", "zh": "兰花" },
+    "scientific": { "en": "Orchidaceae", "ms": "Orchidaceae", "zh": "Orchidaceae" },
     "category": "ornamental",
     "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
-    "regions": "Kuching, Samarahan, Serian",
-    "soil": "Well-drained, bark mix",
-    "water": "Moderate",
+    "regions": { "en": "Kuching, Samarahan, Serian", "ms": "Kuching, Samarahan, Serian", "zh": "古晋, 三马拉汉, 实里安" },
+    "soil": { "en": "Well-drained, bark mix", "ms": "Mengalirkan air dengan baik, campuran kulit kayu", "zh": "排水良好, 树皮混合" },
+    "water": { "en": "Moderate", "ms": "Sederhana", "zh": "中等" },
     "image": "assets/plants/orchid.jpg",
-    "description": "Orchids are prized ornamental plants known for their beautiful and diverse flowers. They are popular in gardens and as houseplants in Sarawak."
+    "description": {
+      "en": "Orchids are prized ornamental plants known for their beautiful and diverse flowers. They are popular in gardens and as houseplants in Sarawak.",
+      "ms": "Orkid adalah tanaman hiasan yang dihargai kerana bunganya yang cantik dan pelbagai. Ia popular di taman dan sebagai tanaman dalaman di Sarawak.",
+      "zh": "兰花是著名的观赏植物，以其美丽多样的花朵而闻名。在砂拉越的花园和室内种植都很受欢迎。"
+    }
   },
   {
-    "name": "Bougainvillea",
-    "scientific": "Bougainvillea spectabilis",
+    "name": { "en": "Bougainvillea", "ms": "Bunga Kertas", "zh": "九重葛" },
+    "scientific": { "en": "Bougainvillea spectabilis", "ms": "Bougainvillea spectabilis", "zh": "Bougainvillea spectabilis" },
     "category": "ornamental",
     "season": ["early-wet", "late-wet", "early-dry", "late-dry"],
-    "regions": "Kuching, Serian, Sri Aman",
-    "soil": "Well-drained, sandy",
-    "water": "Low",
+    "regions": { "en": "Kuching, Serian, Sri Aman", "ms": "Kuching, Serian, Sri Aman", "zh": "古晋, 实里安, 斯里阿曼" },
+    "soil": { "en": "Well-drained, sandy", "ms": "Mengalirkan air dengan baik, berpasir", "zh": "排水良好, 砂质" },
+    "water": { "en": "Low", "ms": "Rendah", "zh": "低" },
     "image": "assets/plants/bougainvillea.jpg",
-    "description": "Bougainvillea is a vibrant ornamental plant with colorful bracts. It is drought-tolerant and commonly used for landscaping and decorative purposes."
+    "description": {
+      "en": "Bougainvillea is a vibrant ornamental plant with colorful bracts. It is drought-tolerant and commonly used for landscaping and decorative purposes.",
+      "ms": "Bunga kertas adalah tanaman hiasan yang ceria dengan bracts berwarna-warni. Ia tahan kemarau dan biasa digunakan untuk landskap dan tujuan hiasan.",
+      "zh": "九重葛是一种色彩鲜艳的观赏植物，具有多彩的苞片。耐旱，常用于园林和装饰用途。"
+    }
   }
 ] 

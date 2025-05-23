@@ -20,17 +20,15 @@
         </div>
         <nav class="nav-container" style="display: flex; justify-content: center;">
             <ul class="nav-links" style="display: flex; gap: 2rem; justify-content: center; align-items: center;">
-                <!-- <li><a href="index.html">Home</a></li> -->
-                <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="weather.html">Weather</a></li>
-                <!--<li><a href="dashboard.html">Dashboard</a></li>-->
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="weather.html" data-i18n="nav_weather">Weather</a></li>
+                <li><a href="plant.html" data-i18n="nav_plant">Plant</a></li>
             </ul>
         </nav>
         <div class="header-auth">
-            <a href="accountregister.html">Register</a>
+            <a href="accountregister.html" data-i18n="header_register">Register</a>
             <span class="divider">|</span>
-            <a href="accountlogin.html">Login</a>
+            <a href="accountlogin.html" data-i18n="header_login">Login</a>
         </div>
     </header>
 
@@ -38,14 +36,14 @@
     <main class="registration-container">
         <div class="registration-box">
             <div class="registration-header">
-                <h2>Welcome Back</h2>
-                <p>Log in to your GreenGrow Sarawak account</p>
+                <h2 data-i18n="accountlogin.title">Welcome Back</h2>
+                <p data-i18n="accountlogin.description">Log in to your GreenGrow Sarawak account</p>
             </div>
 
             <form class="registration-form" id="loginForm">
                 <div id="messageBox" class="message-box" style="display: none;"></div>
                 <div class="form-group">
-                    <label for="email">Email Address</label>
+                    <label for="email" data-i18n="accountlogin.email">Email Address</label>
                     <div class="input-group">
                         <i class="fas fa-envelope"></i>
                         <input type="email" id="email" name="email" placeholder="Enter your email" required>
@@ -53,7 +51,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password" data-i18n="accountlogin.password">Password</label>
                     <div class="input-group">
                         <i class="fas fa-lock"></i>
                         <input type="password" id="password" name="password" placeholder="Enter your password" required>
@@ -63,11 +61,11 @@
 
                 <div class="form-group terms">
                     <input type="checkbox" id="remember" name="remember">
-                    <label for="remember">Remember me</label>
-                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <label for="remember" data-i18n="accountlogin.remember">Remember me</label>
+                    <a href="#" class="forgot-password" data-i18n="accountlogin.forgot">Forgot Password?</a>
                 </div>
 
-                <button type="submit" class="submit-btn">Log In</button>
+                <button type="submit" class="submit-btn" data-i18n="accountlogin.submit">Log In</button>
 
                 <div class="login-link">
                     Don't have an account? <a href="accountregister.html">Register</a>
@@ -79,13 +77,7 @@
             <img src="assets/registration-bg.jpg" alt="Agriculture Background">
             <div class="image-overlay">
                 <h3>Welcome Back!</h3>
-                <p>Access your farming dashboard and marketplace</p>
-                <ul class="benefits-list">
-                    <li><i class="fas fa-check-circle"></i> Manage your products</li>
-                    <li><i class="fas fa-check-circle"></i> Track your orders</li>
-                    <li><i class="fas fa-check-circle"></i> View weather updates</li>
-                    <li><i class="fas fa-check-circle"></i> Access your dashboard</li>
-                </ul>
+                <p>Sign in to access weather and plant information for your farm.</p>
             </div>
         </div>
     </main>
@@ -177,9 +169,8 @@
     <!-- Profile Dropdown -->
     <div class="profile-dropdown" id="profileDropdown" style="display: none; position: absolute; top: 110%; right: 0; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border-radius: 8px; min-width: 140px; z-index: 999;">
         <a href="account.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">My Account</a>
-        <a href="dashboard.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">Dashboard</a>
-        <a href="#" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">Setting</a>
-        <a href="#" id="logout-link" class="dropdown-item" style="display: block; padding: 10px 16px; color: #c00; text-decoration: none;">Log Out</a>
+        <a href="settings.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">Setting</a>
+        <a href="#" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none;">Logout</a>
     </div>
 </body>
 </html> 

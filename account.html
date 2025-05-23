@@ -15,29 +15,24 @@
         </div>
         <nav class="nav-container">
             <ul class="nav-links">
-                <!-- <li><a href="index.html">Home</a></li> -->
-                <li><a href="marketplace.html">Marketplace</a></li>
-                <li><a href="weather.html">Weather</a></li>
-                <li><a href="plant.html">Plant</a></li>
-                <!-- <li><a href="dashboard.html">Dashboard</a></li> -->
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="weather.html" data-i18n="nav_weather">Weather</a></li>
+                <li><a href="plant.html" data-i18n="nav_plant">Plant</a></li>
+                <!-- <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li> -->
             </ul>
         </nav>
         <div class="header-auth">
-            <!-- Profile Dropdown -->
-            <div class="profile-dropdown" id="profileDropdown" style="display: none; position: absolute; top: 110%; right: 0; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border-radius: 8px; min-width: 140px; z-index: 999;">
-                <a href="account.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">My Account</a>
-                <a href="dashboard.html" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">Dashboard</a>
-                <a href="#" class="dropdown-item" style="display: block; padding: 10px 16px; color: #333; text-decoration: none; border-bottom: 1px solid #eee;">Setting</a>
-                <a href="#" id="logout-link" class="dropdown-item" style="display: block; padding: 10px 16px; color: #c00; text-decoration: none;">Log Out</a>
-            </div>
+            <a href="accountregister.html" data-i18n="header_register">Register</a>
+            <span class="divider">|</span>
+            <a href="accountlogin.html" data-i18n="header_login">Login</a>
+            <!-- The profile dropdown is added dynamically by script.js -->
         </div>
     </header>
     <main>
         <section class="account-section" style="padding: 4rem 0; background: var(--light-gray); min-height: 80vh;">
             <div class="section-header">
-                <h2>My Account</h2>
-                <p>Edit your profile, change your password, or delete your account.</p>
+                <h2 data-i18n="account.title">My Account</h2>
+                <p data-i18n="account.description">Edit your profile, change your password, or delete your account.</p>
             </div>
             <div class="account-container" style="max-width: 600px; margin: 0 auto;">
                 <div class="account-profile-box">
@@ -50,49 +45,49 @@
                     </div>
                     <div class="profile-info-fields">
                         <div class="profile-info-row">
-                            <span class="profile-label">Username:</span>
+                            <span class="profile-label" data-i18n="account.username">Username:</span>
                             <span class="profile-value" id="profileUsername">User Name</span>
                             <button type="button" class="profile-change-btn" data-field="username">Change</button>
                         </div>
                         <div class="profile-info-row">
-                            <span class="profile-label">Email:</span>
+                            <span class="profile-label" data-i18n="account.email">Email:</span>
                             <span class="profile-value" id="profileEmail">user@email.com</span>
                             <button type="button" class="profile-change-btn" data-field="email">Change</button>
                         </div>
                         <div class="profile-info-row">
-                            <span class="profile-label">Phone:</span>
+                            <span class="profile-label" data-i18n="account.phone">Phone:</span>
                             <span class="profile-value" id="profilePhone">0123456789</span>
                             <button type="button" class="profile-change-btn" data-field="phone">Change</button>
                         </div>
                         <div class="profile-info-row">
-                            <span class="profile-label">Address:</span>
+                            <span class="profile-label" data-i18n="account.address">Address:</span>
                             <span class="profile-value" id="profileAddress">User Address</span>
                             <button type="button" class="profile-change-btn" data-field="address">Change</button>
                         </div>
                         <div class="profile-info-row">
-                            <span class="profile-label">Password:</span>
+                            <span class="profile-label" data-i18n="account.password">Password:</span>
                             <span class="profile-value" id="profilePassword">********</span>
                             <button type="button" class="profile-change-btn" data-field="password">Change</button>
                         </div>
                         <div class="profile-info-row">
-                            <span class="profile-label">City:</span>
+                            <span class="profile-label" data-i18n="account.city">City:</span>
                             <span class="profile-value" id="profileCity">User City</span>
                             <button type="button" class="profile-change-btn" data-field="city">Change</button>
                         </div>
                         <div class="profile-info-row">
-                            <span class="profile-label">State:</span>
+                            <span class="profile-label" data-i18n="account.state">State:</span>
                             <span class="profile-value" id="profileState">User State</span>
                             <button type="button" class="profile-change-btn" data-field="state">Change</button>
                         </div>
                         <div class="profile-info-row">
-                            <span class="profile-label">Postcode:</span>
+                            <span class="profile-label" data-i18n="account.postcode">Postcode:</span>
                             <span class="profile-value" id="profilePostcode">User Postcode</span>
                             <button type="button" class="profile-change-btn" data-field="postcode">Change</button>
                         </div>
                     </div>
                 </div>
-                <button id="saveProfileBtn" class="profile-save-btn" style="margin-top:1.5rem; width:100%;">Save Changes</button>
-                <button id="logoutBtn" class="profile-logout-btn" style="margin-top:1rem; width:100%; background-color: #dc3545; color: white; border: none; padding: 0.8rem; border-radius: 25px; cursor: pointer;">Log Out</button>
+                <button id="saveProfileBtn" class="profile-save-btn" style="margin-top:1.5rem; width:100%;" data-i18n="profile_save_changes">Save Changes</button>
+                <button id="logoutBtn" class="profile-logout-btn" style="margin-top:1rem; width:100%; background-color: #dc3545; color: white; border: none; padding: 0.8rem; border-radius: 25px; cursor: pointer;" data-i18n="profile_logout">Log Out</button>
                 <hr style="margin: 2em 0;">
                 <!-- Removed change password form and delete account button as per user request -->
             </div>
@@ -101,24 +96,46 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>GreenGrow Sarawak</h3>
-                <p>Empowering farmers with technology and sustainable solutions.</p>
+                <h3 data-i18n="site_title">GreenGrow Sarawak</h3>
+                <p data-i18n="footer_description">Empowering farmers with technology and sustainable solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer_quick_links_header">Quick Links</h3>
+                <ul>
+                    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                    <li><a href="weather.html" data-i18n="nav_weather">Weather</a></li>
+                    <li><a href="plant.html" data-i18n="nav_plant">Plant</a></li>
+                    <!-- <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li> -->
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer_contact_header">Contact Us</h3>
+                <p data-i18n="footer_contact_address"><i class="fas fa-map-marker-alt"></i> Kuching, Sarawak</p>
+                <p data-i18n="footer_contact_phone"><i class="fas fa-phone"></i> +60 12-345 6789</p>
+                <p data-i18n="footer_contact_email"><i class="fas fa-envelope"></i> info@greengrow.com</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 GreenGrow Sarawak. All rights reserved.</p>
+            <p data-i18n="footer_copyright">&copy; 2025 GreenGrow Sarawak. All rights reserved.</p>
         </div>
     </footer>
     <script>
         // TODO: Add JS to load user info, handle form submissions, and delete account
         
         // Logout functionality
-        document.getElementById('logoutBtn').addEventListener('click', function() {
-            // Clear any stored user data
+        document.getElementById('logoutBtn').addEventListener('click', async function() {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user && user.email) {
+                try {
+                    await fetch('/delete-account', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: user.email })
+                    });
+                } catch (e) { /* ignore errors for now */ }
+            }
             localStorage.removeItem('user');
             sessionStorage.removeItem('user');
-            
-            // Redirect to homepage
             window.location.href = 'index.html';
         });
     </script>

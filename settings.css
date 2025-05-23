@@ -1,0 +1,92 @@
+/* Settings Page Styles */
+
+.settings-container {
+    padding: 4rem 5%;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.settings-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
+}
+
+.settings-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+#delete-account-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: #e74c3c; /* Red color for delete */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#delete-account-btn:hover {
+    background: #c0392b; /* Darker red on hover */
+}
+
+/* Optional: Style for the section header on the settings page */
+.settings-container .section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.settings-container .section-header h2 {
+     font-size: 2.5rem;
+     color: var(--primary-color);
+     margin-bottom: 1rem;
+}
+
+.settings-container .section-header p {
+     color: #666;
+     font-size: 1.1rem;
+}
+
+/* Add responsive adjustments if needed */
+@media (max-width: 600px) {
+    .settings-container {
+        padding: 2rem 2%;
+    }
+    .settings-card {
+        padding: 1.5rem;
+    }
+    .settings-card h3 {
+        font-size: 1.3rem;
+    }
+    #delete-account-btn {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+} 
